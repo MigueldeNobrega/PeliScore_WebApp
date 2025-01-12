@@ -11,7 +11,7 @@ export class MoviesService {
   private URL = 'https://api.themoviedb.org//3';
   private apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4Nzc3ZDQxYWY4ZDQyNjFhYjA2NTBjNjgzMmNjMjI4YyIsIm5iZiI6MTczNjYyMjA1Mi4yODEsInN1YiI6IjY3ODJiZmU0MmIyOWE5MThkMDRlYjUyMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._oNNtB6QBHaYOO9tW0Qj9XV_UF_i03Mtte8ijaotBvo';
 
-  private headers={Autorization:`Bearer ${this.apiKey}`};
+  private headers={Authorization:`Bearer ${this.apiKey}`};
 
   constructor(private http:HttpClient) { }
 
