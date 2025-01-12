@@ -1,0 +1,25 @@
+<!-- Slider main container -->
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper" *ngFor="let movie of movies">
+      <!-- Slides -->
+      <div class="swiper-slide" >Slide 1</div>
+
+      <div class="movie-description">
+        <h3>{{movie.title}} <button class="btn btn-outline-light btn-sm">Detalle</button></h3>
+        <p>{{movie.overview}}</p>
+      </div>
+
+    </div>
+
+   
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
