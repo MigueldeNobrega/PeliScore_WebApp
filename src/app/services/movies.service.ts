@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { BillboardResponse } from '../interfaces/billboard.interface';
+import { map, Observable } from 'rxjs';
+import { BillboardResponse, Movie } from '../interfaces/billboard.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +15,13 @@ export class MoviesService {
 
   constructor(private http:HttpClient) { }
 
-  getBillboard():Observable<BillboardResponse>{
+  getBillboard():Observable<Movie[]>{
 
     //https://api.themoviedb.org//3/movie/now_playing?language=es-ES&page=1
 
-    return this.http.get<BillboardResponse>(`${this.URL}/movie/now_playing?language=es-ES&page=1`, {headers:this.headers});
+    return this.http.get<BillboardResponse>(`${this.URL}/movie/now_playing?language=es-ES&page=1`,{headers:this.headers}).pipe(
+      map((response:any)=>response.results)
+    )
 
   }
 
