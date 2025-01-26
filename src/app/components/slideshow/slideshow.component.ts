@@ -38,4 +38,17 @@ this.mySwiper = new Swiper('.swiper',{
 
 }
 
+onSlidePrev(){
+this.mySwiper?.slidePrev();
+
+
+}
+
+
+onSlideNext(){
+  this.mySwiper?.slideNext();
+}
+
+
+
 }
