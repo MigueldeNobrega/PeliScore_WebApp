@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, of, tap } from 'rxjs';
 import { BillboardResponse, Movie } from '../interfaces/billboard.interface';
 
 @Injectable({
@@ -13,14 +13,26 @@ export class MoviesService {
 
   private headers={Authorization:`Bearer ${this.apiKey}`};
 
+  private billboardPage=1;
+  public loading=false;
+
   constructor(private http:HttpClient) { }
 
   getBillboard():Observable<Movie[]>{
 
-    //https://api.themoviedb.org//3/movie/now_playing?language=es-ES&page=1
+    if(this.loading){
+      return of([]);
+    }
 
-    return this.http.get<BillboardResponse>(`${this.URL}/movie/now_playing?language=es-ES&page=1`,{headers:this.headers}).pipe(
-      map((response:any)=>response.results)
+    this.loading=true;
+
+    return this.http.get<BillboardResponse>(`${this.URL}/movie/now_playing?language=es-ES&page=${this.billboardPage}`,{headers:this.headers}).pipe(
+      map((response:any)=>response.results),
+
+      tap(()=>{
+        this.billboardPage+=1;
+        this.loading=false;
+      })
     )
 
   }
