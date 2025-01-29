@@ -11,7 +11,7 @@
 
 
       <div class="movie-description">
-        <h3>{{movie.title}} <button class="btn btn-outline-light btn-sm">Detalle</button></h3>
+        <h3>{{movie.title}} <button class="btn btn-outline-light btn-sm" (click)="onMovieClick(movie)">Detalle</button></h3>
         <p>{{movie.overview |slice:0:130 }}...</p>
       </div>
 

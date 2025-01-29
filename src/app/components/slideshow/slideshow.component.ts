@@ -49,6 +49,11 @@ onSlideNext(){
   this.mySwiper?.slideNext();
 }
 
+onMovieClick(movie:Movie){
+
+  this.router.navigate(['/movies',movie.id])
+
+}
 
 
 }
