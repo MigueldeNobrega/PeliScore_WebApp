@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, of, tap } from 'rxjs';
+import { catchError, map, Observable, of, tap } from 'rxjs';
 import { BillboardResponse, Movie } from '../interfaces/billboard.interface';
+import { MovieDetails } from '../interfaces/details.interface';
+import { Cast, Credits } from '../interfaces/credits.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -41,12 +43,36 @@ export class MoviesService {
   return this.http.get<BillboardResponse>(`${this.URL}/search/movie?query=${text}&language=es-ES&page=1`,{headers:this.headers}).pipe(map(res=>res.results))
  }
 
+
+  movieDetails(id:string){
+
+    return this.http.get<MovieDetails>(`${this.URL}/movie/${id}?language=es-ES`,{headers:this.headers}).pipe(
+
+      catchError(err=> of(null))
+
+    )
+
+  }
+
+  movieCredits(id:string):Observable<Cast[] | null>{
+
+    return this.http.get<Credits>(`${this.URL}/movie/${id}/credits?language=es-ES`,{headers:this.headers}).pipe(
+
+      map(res=>res.cast),
+      catchError(err=> of(null))
+
+    )
+
+  }
+
+
+
+
  resetMoviePage(){
 
   this.billboardPage=1;
 
  }
-
 
 
 
