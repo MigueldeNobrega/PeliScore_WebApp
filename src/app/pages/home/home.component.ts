@@ -32,7 +32,11 @@ export class HomeComponent implements OnInit{
   }
 
 
-constructor(private moviesSvc:MoviesService){}
+constructor(private moviesSvc:MoviesService){
+
+this.moviesSvc.resetMoviePage();
+
+}
 
 ngOnInit(): void {
  

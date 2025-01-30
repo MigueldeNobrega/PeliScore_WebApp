@@ -41,4 +41,13 @@ export class MoviesService {
   return this.http.get<BillboardResponse>(`${this.URL}/search/movie?query=${text}&language=es-ES&page=1`,{headers:this.headers}).pipe(map(res=>res.results))
  }
 
+ resetMoviePage(){
+
+  this.billboardPage=1;
+
+ }
+
+
+
+
 }
