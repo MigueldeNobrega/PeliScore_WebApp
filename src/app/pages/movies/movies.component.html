@@ -52,4 +52,11 @@
     </div>
 </div>
 
+<hr>
 
+<div class="row mt-5 mb-3" *ngIf="cast.length>0">
+    <h3>Reparto</h3>
+    <div class="col">
+        <app-cast-slide-show [cast]="cast"></app-cast-slide-show>
+    </div>
+</div>

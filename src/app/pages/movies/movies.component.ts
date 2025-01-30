@@ -6,11 +6,12 @@ import { MovieDetails } from '../../interfaces/details.interface';
 import { combineLatest } from 'rxjs';
 import { Cast } from '../../interfaces/credits.interface';
 import { PipesModule } from '../../pipes/pipes.module';
+import { CastSlideShowComponent } from '../../components/cast-slide-show/cast-slide-show.component';
 
 @Component({
   selector: 'app-movies',
   standalone: true,
-  imports: [CommonModule, PipesModule],
+  imports: [CommonModule, PipesModule, CastSlideShowComponent],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.css'
 })
