@@ -16,7 +16,7 @@ constructor(private router:Router){
 }
 
 goToForo() {
-  window.location.href = '/assets/Foro/index.html';
+  window.location.href = 'http://localhost/ForoPeliScore/index.html';
 }
 
 
