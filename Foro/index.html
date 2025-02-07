@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORO MDN</title>
+    <link rel="stylesheet" href="assets/estilos/estilo.css">
+    <link rel="stylesheet" href="assets/fontawesome-free-5.15.4-web/css/all.min.css">
+    <script src="assets/scripts/script.js"></script>
+</head>
+
+<body onload="fInicio()" onload="fSacarTemas()">
+
+    <div id="div_modal">
+
+        <div id="div_form_login">
+
+
+
+            <div id="IS">Iniciar Sesión</div>
+
+
+
+            <div class="AC"><i class="fa fa-user"></i> <input type="text" id="alias" placeholder="&nbsp;Alias"> </div>
+
+            <div class="AC"><i class="fa fa-lock"></i><input type="password" id="password"
+                    placeholder="&nbsp;Contraseña"></div>
+
+            <div id="c">
+                <div class="a"><input type="button" class="b" id="z" value="Login" onclick="fLogin()"></div>
+                <div class="a"><input type="button" class="b" id="x" value="Crear Cuenta"
+                        onclick="fMostrar('div_form_registro')"></div>
+                <div colspan="2" class="centrado">
+                    <div id="div_error">&nbsp;</div>
+                </div>
+                <div class="a">
+                    <div class="s" id="y" onclick="fSeguirInvitado()">
+                        <div id="ss">Seguir como invitado</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div id="div_form_registro">
+
+
+            <div id="CrC">Crear Cuenta</div>
+
+
+            <div class="AC">
+
+                <div><i class="fa fa-user-tie"></i><input type="text" id="rnombre" placeholder="&nbsp;Nombre"></div>
+            </div>
+
+
+            <div class="AC">
+
+                <div><i class="fa fa-user"></i><input type="text" id="ralias" placeholder="&nbsp;Alias"></div>
+            </div>
+
+
+            <div class="AC">
+
+                <div><i class="fa fa-lock"></i><input type="password" id="rpassword" placeholder="&nbsp;Contraseña">
+                </div>
+            </div>
+
+
+            <div class="AC">
+
+                <div><i class="fa fa-key"></i><input type="password" id="rrpassword"
+                        placeholder="&nbsp;Repite la Contraseña"></div>
+            </div>
+
+
+
+
+            <div id="cd">
+                <div class="CD"><input type="button" class="b" id="i" value="Registro" onclick="fRegistro()"></div>
+
+
+                <!-- <div  class="CD"><input type="button" class="b" id="h" value="Iniciar Sesión" onclick="fMostrar('div_form_login')"></div>-->
+                <div class="AI">
+                    <div class="s" id="h" onclick="fMostrar('div_form_login')">
+                        <div id="IA">Si ya la tienes, Inicia Sesión Aquí</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="eR">
+
+                <div class="centrado">
+                    <div id="div_error_registro">&nbsp;</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="ModalTema">
+        <div id="div_tema">
+            <div>Introduce el Tema del Foro</div>
+            <input type="text" id="tema" value="" placeholder="Título del foro">
+            <input type="button" value="Aceptar" onclick="fAñadirTema()">
+            <input type="button" value="Cancelar" onclick="fOcultarModalTema()">
+        </div>
+    </div>
+
+<div id="ModalMensaje">
+    <div id="div_mensaje">
+        <div>Introduce el mensaje</div>
+        <input type="text" id="mensaje" value="">
+        <input type="button" value="Aceptar" onclick="fAñadirMensaje()">
+        <input type="button" value="Cancelar" onclick="fOcultarModalMensaje()">
+
+    </div>
+</div>
+
+
+    <div id="ModalB">
+        <div id="borrarT">
+
+        </div>
+    </div>
+
+    <div id="ModalP">
+
+        <div id="EntrarP">
+
+        </div>
+
+    </div>
+
+
+    <div id="ModalF">
+        <div id="CambiarFoto">
+
+        </div>
+    </div>
+
+
+
+    <header>
+        <div id="fo"> FORO </div>
+
+        <div id="profile"><i class="fa fa-user" title="Perfil" onclick="fAbrirPerfil()"></i></div>
+
+        <div id="loguear"><i class="fa fa-sign-in-alt" id="cp" title="Iniciar Sesión" aria-hidden="true"
+                onclick="fMostrar('div_form_login')"></i></div>
+    </header>
+
+
+
+    <nav>
+
+    </nav>
+
+
+
+    <section>
+
+
+    </section>
+
+
+    <footer>&copy;Foro MDN 2024</footer>
+
+
+
+
+
+</body>
+
+</html>
