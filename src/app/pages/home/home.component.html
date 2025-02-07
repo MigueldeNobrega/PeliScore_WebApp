@@ -1,4 +1,4 @@
-<h1>Cartelera</h1>
+<h1 id="car">Cartelera</h1>
 
 
 <div class="row" *ngIf="movies.length > 0">
@@ -13,5 +13,5 @@
 </div>
 
 
-<h1 class="mt-5">Estrenos</h1>
+<h1 class="mt-5" id="est">Estrenos</h1>
 <app-movies-poster class="animate__animated animate__fadeIn" [movies]="movies"></app-movies-poster>
