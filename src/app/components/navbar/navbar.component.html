@@ -1,19 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand cursor" routerLink="/home"><i class="fas fa-film"></i> PeliScore</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="nb">
+    <a class="navbar-brand cursor" routerLink="/home" id="logo"><i class="fas fa-film"></i> PeliScore</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+    
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
        
       </ul>
       <div class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" (click)="goToForo()" id="btnForo">Ir al Foro</button>
         <input #txtSearch class="form-control mr-sm-2" type="search" (keyup.enter)="searchMovie(txtSearch.value)" placeholder="Buscar película">
         <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" (click)="searchMovie(txtSearch.value)">Buscar</button>
       </div>
     </div>
 
-    <div><button (click)="goToForo()">Foro</button></div>
+    
 
   </nav>
