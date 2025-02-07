@@ -1,10 +1,10 @@
-<div class="row" *ngIf="movie">
+<div id="mpos"  class="row" *ngIf="movie">
     <div class="col-6">
         <img [src]="movie.poster_path | poster "  class="img-thumbnail">
     </div>
     <div class="col-6">
 
-        <h3>{{movie.title}}</h3>
+        <h3 id="tit">{{movie.title}}</h3>
 
         <div class="row mt-3">
 
@@ -55,7 +55,7 @@
 <hr>
 
 <div class="row mt-5 mb-3" *ngIf="cast.length>0">
-    <h3>Reparto</h3>
+    <h3 id="rep">Reparto</h3>
     <div class="col">
         <app-cast-slide-show [cast]="cast"></app-cast-slide-show>
     </div>
