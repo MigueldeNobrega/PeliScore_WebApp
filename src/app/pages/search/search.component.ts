@@ -34,7 +34,7 @@ export class SearchComponent implements OnInit {
         this.movies=movies;
 
         if(this.movies.length==0){
-          this.noMovie= 'No se ha encontrado la pelicula';
+          this.noMovie= 'No se ha encontrado la película';
         }
 
       })
