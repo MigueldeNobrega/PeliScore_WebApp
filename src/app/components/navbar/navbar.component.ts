@@ -15,6 +15,12 @@ constructor(private router:Router){
   
 }
 
+goToForo() {
+  window.location.href = '/assets/Foro/index.html';
+}
+
+
+
   ngOnInit(): void {
     
   }
